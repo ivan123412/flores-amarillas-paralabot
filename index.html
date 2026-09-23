@@ -1,53 +1,668 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores para la bot &lt;3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#fffdf5">
 
-    <link rel="stylesheet" href="Style.css">
+    <title>Faltan días 🌽💜</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@1&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100svh;
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background: #fffdf5;
+            color: #4a3b55;
+            padding: 30px 15px;
+            overflow-x: hidden;
+            position: relative;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .fondo-elotes {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .elote {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.28;
+            transform: rotate(var(--rotacion));
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .elote:nth-child(1) {
+            top: 3%;
+            left: 3%;
+            --rotacion: -18deg;
+        }
+
+        .elote:nth-child(2) {
+            top: 8%;
+            left: 18%;
+            --rotacion: 15deg;
+        }
+
+        .elote:nth-child(3) {
+            top: 4%;
+            left: 34%;
+            --rotacion: -10deg;
+        }
+
+        .elote:nth-child(4) {
+            top: 10%;
+            left: 51%;
+            --rotacion: 20deg;
+        }
+
+        .elote:nth-child(5) {
+            top: 5%;
+            left: 70%;
+            --rotacion: -15deg;
+        }
+
+        .elote:nth-child(6) {
+            top: 13%;
+            left: 88%;
+            --rotacion: 12deg;
+        }
+
+        .elote:nth-child(7) {
+            top: 25%;
+            left: 7%;
+            --rotacion: 20deg;
+        }
+
+        .elote:nth-child(8) {
+            top: 31%;
+            left: 22%;
+            --rotacion: -12deg;
+        }
+
+        .elote:nth-child(9) {
+            top: 23%;
+            left: 43%;
+            --rotacion: 16deg;
+        }
+
+        .elote:nth-child(10) {
+            top: 29%;
+            left: 63%;
+            --rotacion: -20deg;
+        }
+
+        .elote:nth-child(11) {
+            top: 24%;
+            left: 82%;
+            --rotacion: 10deg;
+        }
+
+        .elote:nth-child(12) {
+            top: 42%;
+            left: 2%;
+            --rotacion: -15deg;
+        }
+
+        .elote:nth-child(13) {
+            top: 48%;
+            left: 15%;
+            --rotacion: 18deg;
+        }
+
+        .elote:nth-child(14) {
+            top: 44%;
+            left: 34%;
+            --rotacion: -10deg;
+        }
+
+        .elote:nth-child(15) {
+            top: 50%;
+            left: 55%;
+            --rotacion: 15deg;
+        }
+
+        .elote:nth-child(16) {
+            top: 45%;
+            left: 76%;
+            --rotacion: -18deg;
+        }
+
+        .elote:nth-child(17) {
+            top: 55%;
+            left: 92%;
+            --rotacion: 12deg;
+        }
+
+        .elote:nth-child(18) {
+            top: 66%;
+            left: 5%;
+            --rotacion: 20deg;
+        }
+
+        .elote:nth-child(19) {
+            top: 70%;
+            left: 20%;
+            --rotacion: -15deg;
+        }
+
+        .elote:nth-child(20) {
+            top: 65%;
+            left: 40%;
+            --rotacion: 10deg;
+        }
+
+        .elote:nth-child(21) {
+            top: 72%;
+            left: 61%;
+            --rotacion: -20deg;
+        }
+
+        .elote:nth-child(22) {
+            top: 66%;
+            left: 82%;
+            --rotacion: 15deg;
+        }
+
+        .elote:nth-child(23) {
+            top: 84%;
+            left: 9%;
+            --rotacion: -12deg;
+        }
+
+        .elote:nth-child(24) {
+            top: 88%;
+            left: 28%;
+            --rotacion: 18deg;
+        }
+
+        .elote:nth-child(25) {
+            top: 82%;
+            left: 50%;
+            --rotacion: -15deg;
+        }
+
+        .elote:nth-child(26) {
+            top: 90%;
+            left: 70%;
+            --rotacion: 12deg;
+        }
+
+        .elote:nth-child(27) {
+            top: 84%;
+            left: 91%;
+            --rotacion: -18deg;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 1050px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .encabezado {
+            width: 100%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.90);
+            border: 3px solid #dfc9f2;
+            border-radius: 30px;
+            padding: 25px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(128, 82, 157, 0.12);
+        }
+
+        .decoracion {
+            font-size: 24px;
+            letter-spacing: 8px;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-size: clamp(32px, 5vw, 44px);
+            line-height: 1.15;
+            color: #76518c;
+            font-weight: bold;
+        }
+
+        .subtitulo {
+            margin-top: 10px;
+            color: #9b7aaa;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .meses {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .mes {
+            min-width: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border: 3px solid #eadcf4;
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(128, 82, 157, 0.13);
+            position: relative;
+        }
+
+        .mes::before {
+            content: "🌽";
+            position: absolute;
+            top: -18px;
+            right: 25px;
+            font-size: 32px;
+            transform: rotate(15deg);
+        }
+
+        .mes::after {
+            content: "✿";
+            position: absolute;
+            bottom: 12px;
+            left: 15px;
+            font-size: 25px;
+            color: #c6a5d9;
+        }
+
+        .mes h2 {
+            text-align: center;
+            margin: 0 0 22px;
+            font-family: Georgia, serif;
+            font-size: clamp(23px, 3vw, 29px);
+            color: #76518c;
+        }
+
+        .dias-semana,
+        .dias {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .dia-semana {
+            min-width: 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            color: #9873aa;
+            padding-bottom: 8px;
+        }
+
+        .dia {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            font-size: 16px;
+            position: relative;
+            transition: transform 0.2s, background 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .dia:not(.vacio):hover {
+            transform: scale(1.08);
+            background: #f1e7f7;
+        }
+
+        .dia.vacio {
+            background: transparent;
+        }
+
+        .dia.pasado {
+            color: #aaa;
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+            background: #f0edf1;
+        }
+
+        .dia.hoy {
+            background: #80609a;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(128, 96, 154, 0.3);
+        }
+
+        .dia.objetivo {
+            background: #f5d58b;
+            color: #76518c;
+            font-weight: bold;
+            border: 2px solid #e5bc61;
+            box-shadow: 0 4px 10px rgba(224, 185, 94, 0.2);
+        }
+
+        .dia.objetivo:hover {
+            background: #f5d58b;
+        }
+
+        @media (max-width: 800px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .meses {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .encabezado {
+                margin-bottom: 25px;
+                padding: 22px 15px;
+            }
+
+            .mes {
+                padding: 22px 18px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding:
+                    max(15px, env(safe-area-inset-top))
+                    10px
+                    max(20px, env(safe-area-inset-bottom));
+            }
+
+            .encabezado {
+                border-radius: 24px;
+                border-width: 2px;
+                padding: 20px 12px;
+            }
+
+            .decoracion {
+                font-size: 20px;
+                letter-spacing: 5px;
+            }
+
+            h1 {
+                font-size: 31px;
+            }
+
+            .subtitulo {
+                font-size: 14px;
+            }
+
+            .mes {
+                border-radius: 22px;
+                border-width: 2px;
+                padding: 20px 10px;
+            }
+
+            .mes::before {
+                top: -15px;
+                right: 18px;
+                font-size: 27px;
+            }
+
+            .mes::after {
+                font-size: 21px;
+            }
+
+            .mes h2 {
+                font-size: 24px;
+                margin-bottom: 18px;
+            }
+
+            .dias-semana,
+            .dias {
+                gap: 5px;
+            }
+
+            .dia-semana {
+                font-size: 11px;
+                padding-bottom: 6px;
+            }
+
+            .dia {
+                font-size: 14px;
+                border-radius: 11px;
+            }
+
+            .elote {
+                font-size: 23px;
+                opacity: 0.23;
+            }
+        }
+
+        @media (max-width: 360px) {
+            body {
+                padding-left: 7px;
+                padding-right: 7px;
+            }
+
+            .mes {
+                padding-left: 7px;
+                padding-right: 7px;
+            }
+
+            .dias-semana,
+            .dias {
+                gap: 4px;
+            }
+
+            .dia {
+                font-size: 13px;
+                border-radius: 9px;
+            }
+
+            .dia-semana {
+                font-size: 10px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="Contenedor-Binicio">
-        <button class="Button" id="BVer">
-            Picale aki pedazo de bot
-        </button>
+    <div class="fondo-elotes">
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
+        <span class="elote">🌽</span>
     </div>
 
-    <div class="Con-Emergente">
-        <div id="resultado" class="cua">
+    <div class="contenedor">
 
-            <p id="res">
-                Hola amor, te amo, aunque me la hagas machin de pancho te escribo esto desde mi korazon. &lt;3
-            </p>
+        <div class="encabezado">
+            <div class="decoracion">🌽 💜 🌽</div>
 
-            <button id="BotonCerrar" class="Button">
-                Cerrar
-            </button>
+            <h1 id="titulo">Faltan 0 días</h1>
+
+            <div class="subtitulo">
+                Cada día falta un poquito menos amor omg 🌽
+            </div>
+        </div>
+
+        <div class="meses">
+
+            <div class="mes">
+                <h2>Septiembre 2026</h2>
+
+                <div class="dias-semana">
+                    <div class="dia-semana">Lun</div>
+                    <div class="dia-semana">Mar</div>
+                    <div class="dia-semana">Mié</div>
+                    <div class="dia-semana">Jue</div>
+                    <div class="dia-semana">Vie</div>
+                    <div class="dia-semana">Sáb</div>
+                    <div class="dia-semana">Dom</div>
+                </div>
+
+                <div class="dias" id="septiembre"></div>
+            </div>
+
+            <div class="mes">
+                <h2>Octubre 2026</h2>
+
+                <div class="dias-semana">
+                    <div class="dia-semana">Lun</div>
+                    <div class="dia-semana">Mar</div>
+                    <div class="dia-semana">Mié</div>
+                    <div class="dia-semana">Jue</div>
+                    <div class="dia-semana">Vie</div>
+                    <div class="dia-semana">Sáb</div>
+                    <div class="dia-semana">Dom</div>
+                </div>
+
+                <div class="dias" id="octubre"></div>
+            </div>
 
         </div>
+
     </div>
 
-    <main class="Contenedor">
+    <script>
+        const inicio = new Date(2026, 8, 21);
+        const objetivo = new Date(2026, 9, 16);
 
-        <canvas id="Flor" class="Flor"></canvas>
+        function quitarHora(fecha) {
+            return new Date(
+                fecha.getFullYear(),
+                fecha.getMonth(),
+                fecha.getDate()
+            );
+        }
 
-        <div class="Texto">
-            <h2 id="Text">
-                La niña mas bonita del Mundo, se merece todo, Te amo chiquis, aunque me la hagas de PANCHO. Te amo niña, te voy a extrañar mucho, nos vemos prontito
-            </h2>
-        </div>
+        function calcularDias() {
+            const hoy = quitarHora(new Date());
 
-    </main>
+            const diferencia = objetivo - hoy;
 
-    <script src="app.js"></script>
-    <script src="Dis.js"></script>
+            const dias = Math.ceil(
+                diferencia / (1000 * 60 * 60 * 24)
+            );
+
+            if (dias > 0) {
+                document.getElementById("titulo").textContent =
+                    `Faltan ${dias} días`;
+            } else if (dias === 0) {
+                document.getElementById("titulo").textContent =
+                    "¡Hoy es 16 de octubre! 🌽💜";
+            } else {
+                document.getElementById("titulo").textContent =
+                    "El 16 de octubre ya pasó 💜";
+            }
+        }
+
+        function crearCalendario(mes, elementoId) {
+            const contenedor = document.getElementById(elementoId);
+
+            const primerDia = new Date(2026, mes, 1);
+            const ultimoDia = new Date(2026, mes + 1, 0);
+
+            let diaSemana = primerDia.getDay();
+
+            if (diaSemana === 0) {
+                diaSemana = 7;
+            }
+
+            for (let i = 1; i < diaSemana; i++) {
+                const espacio = document.createElement("div");
+
+                espacio.classList.add("dia", "vacio");
+
+                contenedor.appendChild(espacio);
+            }
+
+            const hoy = quitarHora(new Date());
+
+            for (let dia = 1; dia <= ultimoDia.getDate(); dia++) {
+
+                const fecha = new Date(2026, mes, dia);
+
+                const elemento = document.createElement("div");
+
+                elemento.classList.add("dia");
+
+                if (mes === 9 && dia === 16) {
+                    elemento.textContent = "🌽";
+                } else {
+                    elemento.textContent = dia;
+                }
+
+                if (fecha >= inicio && fecha < hoy) {
+                    elemento.classList.add("pasado");
+                }
+
+                if (fecha.getTime() === hoy.getTime()) {
+                    elemento.classList.add("hoy");
+                }
+
+                if (fecha.getTime() === objetivo.getTime()) {
+                    elemento.classList.add("objetivo");
+                }
+
+                contenedor.appendChild(elemento);
+            }
+        }
+
+        calcularDias();
+
+        crearCalendario(8, "septiembre");
+        crearCalendario(9, "octubre");
+    </script>
 
 </body>
 </html>
+```
